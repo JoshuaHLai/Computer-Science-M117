@@ -1,0 +1,111 @@
+<style>
+table, th, td{
+  border: 1px solid black;
+}
+</style>
+
+<html>
+  <head><title>HTML Servlet mappings</title></head>
+  <body>
+    <h1>/attack</h1>
+    <table>
+      <tr><th>GET Parameter</th><th>Description</th></tr>
+      <tr><td>id1</td><td>The user ID of the attacker</td></tr>
+      <tr><td>id2</td><td>The user ID of the target</td></tr>
+      <tr><td>session</td><td>The session ID of the current game</td></tr>
+    </table>
+    <table>
+      <tr><th>Return</th><th>Description</th></tr>
+      <tr>
+        <td>OLD HEALTH: &lt;h1&gt;
+        <br>NEW HEALTH: &lt;h2&gt;
+        </td>
+        <td>Successful attack, the target went from &lt;h1&gt; to &lt;h2&gt; health</td>
+      </tr>
+      <tr><td>KILL: &lt;loot&gt;</td><td>The attack killed id2, the attacker has gained &lt;loot&gt; resource points
+          <br>The user changes their name to "DEAD", which will be read on next update by the app, handle death timeout, new name, etc.
+          <br>Serverside, the user is reset to a basic zombie.</td></tr>
+      <tr><td>SESSION ENDED: &lt;sID&gt;</td><td>The session has ended, a new session has started with session id &lt;sID&gt;</td></tr>
+      <tr><td>NONEXISTENT USER</td><td>Either id1 or id2 do not exist.</td></tr>
+    </table>
+    <hr>
+
+    <h1>/session</h1>
+    <table>
+      <tr><th>GET Parameter</th><th>Description</th></tr>
+    </table>
+    <table>
+      <tr><th>Return</th><th>Description</th></tr>
+      <tr>
+        <td>Session ID: &lt;sID&gt;
+        <br>Session Length: &lt;time&gt;
+        <br>Scoreboard: &lt;...&gt;
+        </td>
+        <td>Session info, lists users by amount of resources</td>
+      </tr>
+    </table>
+    <hr>
+
+    <h1>/add</h1>
+    <table>
+      <tr><th>GET Parameter</th><th>Description</th></tr>
+      <tr><td>name</td><td>The desired user name</td></tr>
+      <tr><td>x</td><td>The X coordinate of the user</td></tr>
+      <tr><td>y</td><td>The Y coordinate of the user</td></tr>
+      <tr><td>[type]</td><td>(optional) Defaults to human, "zombie" for zombie.</td>
+    </table>
+    <table>
+      <tr><th>Return</th><th>Description</th></tr>
+      <tr>
+        <td>ID: &lt;uID&gt;
+        <br>SESSION: &lt;sID&gt;
+        </td>
+        <td>Successful add, user with ID &lt;uID&gt; has been added to the game session &lt;sID&gt;</td>
+      </tr>
+    </table>
+    <hr>
+
+    <h1>/list</h1>
+    <table>
+      <tr><th>GET Parameter</th><th>Description</th></tr>
+      <tr><td>[id]</td><td>The userID of the user to display. If omitted, shows all</td></tr>
+    </table>
+    <table>
+      <tr><th>Return</th><th>Description</th></tr>
+      <tr>
+        <td>&lt;uID&gt;, &lt;human&gt;, &lt;name&gt;, &lt;health&gt;, &lt;attack&gt;, &lt;defense&gt;, &lt;resources&gt;, &lt;locX&gt;, &lt;locY&gt;
+        </td>
+        <td>Used to get own status, or for debugging</td>
+      </tr>
+    </table>
+    <hr>
+
+    <h1>/update</h1>
+    <table>
+      <tr><th>GET Parameter</th><th>Description</th></tr>
+      <tr><td>id</td><td>The userID of the user to update</td></tr>
+      <tr><td>session</td><td>The game session of the user</td></tr>
+      <tr><td>[name]</td><td>The new name of the user</td></tr>
+      <tr><td>[human]</td><td>The new status of the user</td></tr>
+      <tr><td>[h]</td><td>The new health of the user</td></tr>
+      <tr><td>[a]</td><td>The new attack of the user</td></tr>
+      <tr><td>[d]</td><td>The new defense of the user</td></tr>
+      <tr><td>[r]</td><td>The new resources of the user</td></tr>
+      <tr><td>[x]</td><td>The new x of the user</td></tr>
+      <tr><td>[y]</td><td>The new y of the user</td></tr>
+    </table>
+    <table>
+      <tr><th>Return</th><th>Description</th></tr>
+      <tr>
+        <td>SELF|ALLY|ENEMY: &lt;uID&gt;, &lt;human&gt;, &lt;name&gt;, &lt;health&gt;, &lt;attack&gt;, &lt;defense&gt;, &lt;resources&gt;, &lt;locX&gt;, &lt;locY&gt;
+          <br>ALLY|ENEMY: &lt;...&gt;
+        </td>
+        <td>Successful update, returns a list of nearby users.</td>
+      </tr>
+      <tr><td>SESSION ENDED: &lt;sID&gt;</td><td>The session has ended, a new session has started with session id &lt;sID&gt;</td></tr>
+      <tr><td>NONEXISTENT USER</td><td>Either id1 or id2 do not exist.</td></tr>
+    </table>
+    <hr>
+
+  </body>
+</html>

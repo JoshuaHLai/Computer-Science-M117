@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">M117 Project</string>
+    <string name="title_activity_options">Option</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_shop">Shop</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome">Welcome</string>
+    <string name="human">Human</string>
+    <string name="zombie">Zombie</string>
+    <string name="map">Map</string>
+    <string name="shop">Shop</string>
+    <string name="increase_attack">Increase Attack</string>
+    <string name="increase_defense">Increase Defense</string>
+    <string name="increase_health">Increase Health</string>
+    <string name="resource">Resource</string>
+    <string name="attack">Attack</string>
+    <string name="defense">Defense</string>
+    <string name="health">Health</string>
+    <string name="assault">Attack</string>
+    <string name="center">C</string>
+    <string name="zoom_in">+</string>
+    <string name="zoom_out">-</string>
+</resources>

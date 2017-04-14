@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/attack_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/icon"
+        android:layout_toEndOf="@+id/icon"
+        android:layout_toRightOf="@+id/icon"
+        android:contentDescription="@string/attack"
+        android:src="@drawable/attack_icon" />
+
+    <ImageView
+        android:id="@+id/defense_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/attack_count"
+        android:layout_toEndOf="@+id/attack_count"
+        android:layout_toRightOf="@+id/attack_count"
+        android:contentDescription="@string/health"
+        android:src="@drawable/defense_icon" />
+
+    <ImageView
+        android:id="@+id/health_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/name"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/name"
+        android:layout_toRightOf="@+id/name"
+        android:contentDescription="@string/defense"
+        android:src="@drawable/health_icon" />
+
+    <TextView
+        android:id="@+id/attack_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/attack_icon"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/attack_icon"
+        android:layout_toRightOf="@+id/attack_icon"
+        android:width="50dp"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/defense_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/defense_icon"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/defense_icon"
+        android:layout_toRightOf="@+id/defense_icon"
+        android:width="50dp"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/health_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/health_icon"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/health_icon"
+        android:layout_toRightOf="@+id/health_icon"
+        android:width="50dp"
+        android:keepScreenOn="false"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:alpha="0.5"
+        android:background="#ff0000"
+        android:contentDescription="MapIcon"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/attack" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/icon"
+        android:layout_toLeftOf="@+id/defense_count"
+        android:layout_toRightOf="@+id/icon"
+        android:paddingBottom="10dp"
+        android:textAlignment="textStart"
+        android:textColor="#CC0033"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/userID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/icon"
+        android:layout_toLeftOf="@+id/defense_count"
+        android:layout_toRightOf="@+id/icon"
+        android:paddingBottom="10dp"
+        android:textAlignment="textStart"
+        android:textColor="#CC0033"
+        android:textSize="25dp"
+        android:visibility="invisible" />
+
+</RelativeLayout>
